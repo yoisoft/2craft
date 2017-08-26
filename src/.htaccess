@@ -1,0 +1,8 @@
+ErrorDocument 404 /error/404.html
+RewriteEngine On 
+RewriteRule ^mod/([^/]*)/([^/]*)$ /mod.php?id=$1&name=$2 [PT,NE,QSA]
+RewriteRule ^api/([^/]*)/mod/([^/]*)$ /mod.php?api=$1&id=$2 [PT,NE,QSA]
+RewriteRule ^api/([^/]*)/mod/([^/]*)/([^/]*)$ /mod.php?xml=true&id=$2 [PT,NE,QSA]
+RewriteRule ^comment/([^/]*)/([^/]*)/([^/]*)$ /comment.php?offset=$1&id=$2&quantity=$3 [PT,NE,QSA]
+RewriteRule ^comment/([^/]*)/$ /comment.php?id=$1 [PT,NE,QSA]
+RewriteRule ^search/ /index.php [PT,NE,QSA]
